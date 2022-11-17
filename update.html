@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UPDATE</title>
+</head>
+<body bgcolor="">
+    <h1 align="center">Data</h1 >
+    <table border="1" align="center" id="table">
+        <tr>
+            <th>Sno</th>
+            <th>First Name</th>
+            <th>Laste Name</th>
+            <th>Country</th>
+            <th>Mobile number</th>
+        </tr>
+        <tr>
+            <td>01</td> 
+            <td>ali</td> 
+            <td>ahmed</td> 
+            <td>mac</td> 
+            <td>345678987</td> 
+            
+        </tr>
+        <tr>
+            <td>02</td> 
+            <td>ahmed</td> 
+            <td>yassin</td> 
+            <td>rabat</td> 
+            <td>098568765</td> 
+        
+        </tr>   
+        <tr>
+            <td>03</td> 
+            <td>khalid</td> 
+            <td>dilawi</td> 
+            <td>tanger</td> 
+            <td>765877848</td> 
+        
+        </tr>    
+        <tr>
+            <td>04</td> 
+            <td>sara</td> 
+            <td>mzouri</td> 
+            <td>agadir</td> 
+            <td>68560</td> 
+        
+        </tr>  
+        <tr>
+            <td>05</td> 
+            <td>hana</td> 
+            <td>diwani</td> 
+            <td>tetouan</td> 
+            <td>3637689079</td> 
+            
+        </tr>  
+            <tr>
+            <td>06</td> 
+            <td>naoufal</td> 
+            <td>idrissi</td> 
+            <td>khmissat</td> 
+            <td>785796899</td> 
+        </tr>   
+    </table>
+    <br>
+    <table align="center">
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" class="data"></td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td><input type="text" class="data"></td>
+        </tr>
+        <tr>
+            <td>Country</td>
+            <td><input type="text" class="data"></td>
+        </tr>
+        <tr>
+            <td>Mobile number</td>
+            <td><input type="tel" class="data"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" value="UPDATE" id="submit"></td>
+            
+        </tr>
+    </table>
+
+    <!-- Script -->
+
+    <script>
+        let main = document.getElementById("table")
+        console.log(main);
+        for (let i = 1; i < main.rows.length; i++) {
+            const element = main.rows[i];
+            element.onclick = function(){
+                var flag = this
+                for (let index = 0; index < 4; index++) {
+                    const element = document.getElementsByClassName("data")[index]
+                    element.value = this.cells[index+1].textContent
+                    // update 
+                    let update = document.getElementById("submit")
+                    update.onclick = function(){
+                        for (let index = 0; index < 4; index++) {
+                            flag.cells[index+1].innerHTML = document.getElementsByClassName("data")[index].value
+                        }
+                    }
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
